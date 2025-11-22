@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import './App.css';
 import Hero from './components/Hero';
 import Catalog from './components/Catalog';
+import Footer from './components/Footer';
 
 function App() {
   const productsRef = useRef(null);
@@ -17,10 +18,9 @@ function App() {
       <Hero onShopClick={scrollToProducts} />
       {/* Products Section */}
       <div ref={productsRef}>
-        <h2 className='text-6xl font-bold text-center py-8'>Collections</h2>
-        {/* Items catalog */}
         <Catalog />
       </div>
+      <Footer />
     </div>
   );
 }

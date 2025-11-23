@@ -1,9 +1,10 @@
 import products from '../data/products';
 import ItemCard from '../components/ItemCard';
+import { Link } from 'react-router-dom';
 
 export default function Catalog() {
   return (
-    <div>
+    <div className='pt-8'>
       <h2 className='text-6xl font-bold text-center pb-16'>Collections</h2>
 
       <div className='w-[1200px] mx-auto grid grid-cols-3 gap-8'>
@@ -21,12 +22,12 @@ export default function Catalog() {
 
       {/* View All Button */}
       <div className='w-full flex justify-center mt-8'>
-        <a
-          href='/products'
+        <Link
+          to='/products'
           className='bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors'
         >
           View All
-        </a>
+        </Link>
       </div>
     </div>
   );

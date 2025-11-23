@@ -1,10 +1,8 @@
 import { useRef } from 'react';
-import './App.css';
-import Hero from './components/Hero';
-import Catalog from './components/Catalog';
-import Footer from './components/Footer';
+import Hero from '../components/Hero';
+import Catalog from '../components/Catalog';
 
-function App() {
+const HomePage = () => {
   const productsRef = useRef(null);
 
   const scrollToProducts = () => {
@@ -12,7 +10,7 @@ function App() {
   };
 
   return (
-    <div className='grid grid-cols-1 gap-16'>
+    <div className='grid grid-cols-1'>
       {/* Hero Section */}
       <Hero onShopClick={scrollToProducts} />
       {/* Products Section */}
@@ -23,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

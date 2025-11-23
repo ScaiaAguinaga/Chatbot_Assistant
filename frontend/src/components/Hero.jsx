@@ -11,7 +11,7 @@ const Hero = ({ onShopClick }) => {
           </p>
           <button
             onClick={onShopClick}
-            className='text-3xl font-bold bg-blue-400 hover:bg-blue-500 rounded-md py-2 px-4 cursor-pointer flex mx-auto'
+            className='text-3xl font-bold bg-blue-500 hover:bg-blue-600 rounded-md py-2 px-4 cursor-pointer flex mx-auto'
           >
             Shop Now
           </button>

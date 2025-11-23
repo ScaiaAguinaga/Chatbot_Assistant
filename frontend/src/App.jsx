@@ -12,15 +12,13 @@ function App() {
   };
 
   return (
-    <div>
-      <nav></nav>
+    <div className='grid grid-cols-1 gap-16'>
       {/* Hero Section */}
       <Hero onShopClick={scrollToProducts} />
       {/* Products Section */}
       <div ref={productsRef}>
         <Catalog />
       </div>
-      <Footer />
     </div>
   );
 }

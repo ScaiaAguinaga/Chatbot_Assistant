@@ -17,16 +17,16 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className='flex flex-col gap-2'>
           <h3 className='text-lg font-semibold text-white mb-2'>Explore</h3>
-          <a href='/' className='text-gray-300 hover:text-white transition'>
+          <a href='/' className='text-white hover:text-gray-300 transition'>
             Collections
           </a>
-          <a href='/' className='text-gray-300 hover:text-white transition'>
+          <a href='/' className='text-white hover:text-gray-300 transition'>
             About Us
           </a>
-          <a href='/' className='text-gray-300 hover:text-white transition'>
+          <a href='/' className='text-white hover:text-gray-300 transition'>
             Contact
           </a>
-          <a href='/' className='text-gray-300 hover:text-white transition'>
+          <a href='/' className='text-white hover:text-gray-300 transition'>
             FAQ
           </a>
         </div>
@@ -34,7 +34,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className='flex flex-col gap-2'>
           <h3 className='text-lg font-semibold text-white mb-2'>Follow Us</h3>
-          <div className='flex gap-4 text-2xl text-gray-300'>
+          <div className='flex gap-4 text-2xl text-white'>
             <a
               href='https://instagram.com'
               className='hover:text-pink-400 transition'

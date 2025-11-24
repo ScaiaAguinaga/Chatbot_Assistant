@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage.jsx';
 import ProductsPage from './pages/ProductsPage.jsx';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
+import ChatWidget from './components/ChatWidget.jsx';
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
       </Routes>
       {/* Persisten Footer */}
       <Footer />
+      <ChatWidget />
     </BrowserRouter>
   </StrictMode>
 );

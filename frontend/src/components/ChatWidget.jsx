@@ -5,7 +5,7 @@ import { FiMessageSquare, FiX, FiSend, FiMinus } from 'react-icons/fi';
 const SUGGESTIONS = [
   "What's new this season?",
   'Recommend a winter jacket',
-  'Track my order',
+  'Summer clothing',
 ];
 
 export default function ChatWidget() {
@@ -59,7 +59,7 @@ export default function ChatWidget() {
       const reply = {
         id: crypto.randomUUID(),
         role: 'assistant',
-        text: 'AI Chatbot implementation is currently in progess, but once implemented you will be able to ask it for clothing recommendations from our site!',
+        text: 'AI Chatbot implementation is currently under development, but once implemented you will be able to ask for clothing recommendations from our site!',
       };
       setMessages((prev) => [...prev, reply]);
       setTyping(false); // stop typing animation

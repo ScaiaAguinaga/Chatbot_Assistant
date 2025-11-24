@@ -5,7 +5,7 @@ export const products = [
     price: 89.99,
     description:
       'Lightweight thermal-lined hoodie with reflective accents and a modern, tapered fit.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/NovaWearTechHoodie.png',
     tags: ['hoodie', 'fall', 'streetwear', 'athleisure', 'layering'],
   },
   {

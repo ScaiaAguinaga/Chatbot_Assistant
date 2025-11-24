@@ -26,6 +26,7 @@ createRoot(document.getElementById('root')).render(
       </Routes>
       {/* Persisten Footer */}
       <Footer />
+      {/* AI Chat Widget */}
       <ChatWidget />
     </BrowserRouter>
   </StrictMode>

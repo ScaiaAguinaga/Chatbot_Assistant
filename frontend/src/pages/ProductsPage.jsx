@@ -68,7 +68,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <div className='w-full pt-8'>
+    <div className='w-full py-8'>
       {/* Page header */}
       <div className='max-w-[1200px] mx-auto px-6 md:px-0'>
         <h1 className='text-6xl font-bold text-center pb-8'>All Products</h1>

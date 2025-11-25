@@ -77,11 +77,10 @@ export default function ChatWidget() {
       {/* Floating chat button in bottom-right corner */}
       <button
         onClick={() => {
-          setOpen((o) => !o);
+          setOpen((prev) => !prev);
           setMinimized(false);
         }}
         className='fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors flex items-center justify-center'
-        aria-label={open ? 'Close chat' : 'Open chat'}
       >
         {/* Change icon depending on open state */}
         {open ? <FiX size={22} /> : <FiMessageSquare size={22} />}
@@ -91,7 +90,7 @@ export default function ChatWidget() {
       {open && (
         <div className='fixed bottom-24 right-6 z-50 w-88 max-w-[92vw]'>
           <div className='bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden'>
-            {/* 🔷 Header section with title + buttons */}
+            {/* Header section with title and buttons */}
             <div className='flex items-center justify-between px-4 py-3 bg-blue-600 text-white'>
               <div className='font-semibold'>NovaWear Assistant</div>
               <div className='flex items-center gap-2'>
@@ -99,7 +98,6 @@ export default function ChatWidget() {
                 <button
                   onClick={() => setMinimized((m) => !m)}
                   className='p-1 rounded hover:bg-white/10'
-                  aria-label={minimized ? 'Expand' : 'Minimize'}
                 >
                   <FiMinus />
                 </button>
@@ -107,14 +105,13 @@ export default function ChatWidget() {
                 <button
                   onClick={() => setOpen(false)}
                   className='p-1 rounded hover:bg-white/10'
-                  aria-label='Close'
                 >
                   <FiX />
                 </button>
               </div>
             </div>
 
-            {/* 💬 Chat body (hidden when minimized) */}
+            {/* Chat body (hidden when minimized) */}
             {!minimized && (
               <>
                 {/* Message list area */}
@@ -142,20 +139,20 @@ export default function ChatWidget() {
                     </div>
                   ))}
 
-                  {/* ⌛ Typing indicator */}
+                  {/* Typing indicator */}
                   {typing && (
                     <div className='mb-2 flex justify-start'>
                       <div className='bg-white text-gray-800 border border-gray-200 rounded-2xl rounded-bl-md px-3 py-2 text-sm'>
                         <span className='inline-flex items-center gap-1'>
-                          <span className='animate-pulse'>●</span>
-                          <span className='animate-pulse delay-150'>●</span>
-                          <span className='animate-pulse delay-300'>●</span>
+                          <span className='animate-pulse'>.</span>
+                          <span className='animate-pulse delay-150'>.</span>
+                          <span className='animate-pulse delay-300'>.</span>
                         </span>
                       </div>
                     </div>
                   )}
 
-                  {/* 💡 Quick reply buttons shown early in chat */}
+                  {/* Quick reply buttons shown only if chat is new */}
                   {messages.length <= 2 && (
                     <div className='mt-3 flex flex-wrap gap-2'>
                       {SUGGESTIONS.map((s) => (
@@ -171,7 +168,7 @@ export default function ChatWidget() {
                   )}
                 </div>
 
-                {/* ✏️ Message composer at the bottom */}
+                {/* Message composer at the bottom */}
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();

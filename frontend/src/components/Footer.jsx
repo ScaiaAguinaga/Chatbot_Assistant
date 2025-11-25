@@ -17,7 +17,10 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className='flex flex-col gap-2'>
           <h3 className='text-lg font-semibold text-white mb-2'>Explore</h3>
-          <a href='/' className='text-white hover:text-gray-300 transition'>
+          <a
+            href='/products'
+            className='text-white hover:text-gray-300 transition'
+          >
             Collections
           </a>
           <a href='/' className='text-white hover:text-gray-300 transition'>

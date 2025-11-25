@@ -4,7 +4,7 @@ import Catalog from '../components/Catalog';
 import AboutUs from '../components/AboutUs'; // 👈 Import the new section
 
 const HomePage = () => {
-  const productsRef = useRef(null);
+  const productsRef = useRef('/products/Placeholder.jpg');
 
   const scrollToProducts = () => {
     productsRef.current?.scrollIntoView({ behavior: 'smooth' });

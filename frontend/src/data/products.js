@@ -5,7 +5,7 @@ export const products = [
     price: 89.99,
     description:
       'Lightweight thermal-lined hoodie with reflective accents and a modern, tapered fit.',
-    image: '/products/NovaWearTechHoodie.png',
+    image: '/products/NovaWearTechHoodie.jpg',
     tags: ['hoodie', 'fall', 'streetwear', 'athleisure', 'layering'],
   },
   {
@@ -14,7 +14,7 @@ export const products = [
     price: 129.99,
     description:
       'Waterproof, breathable shell with taped seams and packable hood for unexpected downpours.',
-    image: null,
+    image: '/products/AeroShellRainJacket.jpg',
     tags: ['jacket', 'rain', 'spring', 'outdoor', 'performance'],
   },
   {
@@ -23,7 +23,7 @@ export const products = [
     price: 249.99,
     description:
       'Ultra-warm parka with down-alternative insulation and windproof exterior for deep winter.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/LumenThermalParka.jpg',
     tags: ['parka', 'winter', 'outerwear', 'insulated', 'premium'],
   },
   {
@@ -32,7 +32,7 @@ export const products = [
     price: 74.99,
     description:
       'Four-way stretch joggers with zip pockets and breathable knit for all\u2011day comfort.',
-    image: null,
+    image: '/products/AirFlexJoggers.jpg',
     tags: ['pants', 'athleisure', 'everyday', 'travel', 'stretch'],
   },
   {
@@ -41,7 +41,7 @@ export const products = [
     price: 69.99,
     description:
       'Relaxed-fit linen button-up that stays cool and airy in peak summer heat.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/CoastlineLinenShirt.jpg',
     tags: ['shirt', 'summer', 'casual', 'breathable', 'resort'],
   },
   {
@@ -59,7 +59,7 @@ export const products = [
     price: 29.99,
     description:
       'Moisture-wicking tee with anti-odor finish and flat seams for training days.',
-    image: null,
+    image: '/products/HaloPerformanceTee.jpg',
     tags: ['t-shirt', 'training', 'summer', 'performance', 'basics'],
   },
   {
@@ -77,7 +77,7 @@ export const products = [
     price: 89.99,
     description:
       'Lightweight quilted midlayer with secure interior pocket; perfect for transitional weather.',
-    image: null,
+    image: '/products/GlacierQuiltedVest.jpg',
     tags: ['vest', 'fall', 'layering', 'outdoor', 'lightweight'],
   },
   {
@@ -86,7 +86,7 @@ export const products = [
     price: 45.99,
     description:
       'Quick-dry swim shorts with mesh liner and zip pocket for beach-to-street days.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/SolarWaveSwimShorts.jpg',
     tags: ['shorts', 'summer', 'swim', 'vacation', 'casual'],
   },
   {
@@ -95,7 +95,7 @@ export const products = [
     price: 79.99,
     description:
       'Slim-tapered chinos with hidden stretch waistband and durable stain-resistant finish.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/CircuitChinoPants.jpg',
     tags: ['pants', 'workwear', 'smart-casual', 'all-season', 'versatile'],
   },
   {
@@ -104,7 +104,7 @@ export const products = [
     price: 39.99,
     description:
       'Ultralight puffer scarf that traps warmth; compresses into included travel pouch.',
-    image: null,
+    image: '/products/NimbusPufferScarf.jpg',
     tags: ['accessory', 'winter', 'scarf', 'packable', 'cold-weather'],
   },
   {
@@ -113,7 +113,7 @@ export const products = [
     price: 159.99,
     description:
       'Lightweight insulated puffer jacket with water-repellent finish and minimalist design.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/AuroraPufferJacket.jpg',
     tags: ['jacket', 'winter', 'insulated', 'outdoor', 'performance'],
   },
   {
@@ -122,7 +122,7 @@ export const products = [
     price: 54.99,
     description:
       'Breathable linen-blend shorts ideal for warm days and coastal trips.',
-    image: null,
+    image: '/products/BreezeLinenShorts.jpg',
     tags: ['shorts', 'summer', 'casual', 'beach', 'lightweight'],
   },
   {
@@ -131,7 +131,7 @@ export const products = [
     price: 59.99,
     description:
       'Ultra-soft cotton crewneck sweatshirt with ribbed cuffs and modern silhouette.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/EverSoftCrewneck.jpg',
     tags: ['sweatshirt', 'fall', 'casual', 'streetwear', 'basics'],
   },
   {
@@ -140,7 +140,7 @@ export const products = [
     price: 99.99,
     description:
       'Windproof shell with adjustable hood and reflective trim for outdoor activity.',
-    image: null,
+    image: '/products/Placeholder.jpg',
     tags: ['jacket', 'spring', 'outdoor', 'performance', 'lightweight'],
   },
   {
@@ -149,7 +149,7 @@ export const products = [
     price: 84.99,
     description:
       'Half-zip fleece pullover made from recycled polyester for cozy warmth.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/CascadeFleecePullover.jpg',
     tags: ['fleece', 'winter', 'cozy', 'layering', 'eco-friendly'],
   },
   {
@@ -158,7 +158,7 @@ export const products = [
     price: 64.99,
     description:
       'High-rise leggings with stretch compression fabric for all-day wear or workouts.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/NovaStretchLeggings.jpg',
     tags: ['leggings', 'athleisure', 'training', 'basics', 'stretch'],
   },
   {
@@ -167,7 +167,7 @@ export const products = [
     price: 89.99,
     description:
       'Slim cargo pants with hidden stretch waistband and water-resistant coating.',
-    image: null,
+    image: '/products/Placeholder.jpg',
     tags: ['pants', 'fall', 'urban', 'casual', 'utility'],
   },
   {
@@ -176,7 +176,7 @@ export const products = [
     price: 149.99,
     description:
       'Multi-pocket cotton field jacket inspired by vintage military style.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/HorizonFieldJacket.jpg',
     tags: ['jacket', 'fall', 'outdoor', 'heritage', 'layering'],
   },
   {
@@ -185,7 +185,7 @@ export const products = [
     price: 99.99,
     description:
       'Merino wool-blend sweater with a timeless crew neckline and refined fit.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/LuxeKnitSweater.jpg',
     tags: ['sweater', 'winter', 'premium', 'knitwear', 'layering'],
   },
   {
@@ -194,7 +194,7 @@ export const products = [
     price: 34.99,
     description:
       'Relaxed-fit tee crafted from organic cotton for maximum softness.',
-    image: null,
+    image: '/products/DriftRelaxedTee.jpg',
     tags: ['t-shirt', 'summer', 'casual', 'basics', 'eco-friendly'],
   },
   {
@@ -212,7 +212,7 @@ export const products = [
     price: 229.99,
     description:
       'Classic tailored wool coat with sleek lapel and hidden button placket.',
-    image: '/products/Placeholder.jpg',
+    image: '/products/MetroWoolCoat.jpg',
     tags: ['coat', 'winter', 'formal', 'premium', 'outerwear'],
   },
   {
@@ -221,7 +221,7 @@ export const products = [
     price: 44.99,
     description:
       'Lightweight training shorts with mesh lining and moisture-wicking finish.',
-    image: null,
+    image: '/products/CoreTrainingShorts.jpg',
     tags: ['shorts', 'training', 'summer', 'performance', 'gym'],
   },
   {
@@ -248,7 +248,7 @@ export const products = [
     price: 159.99,
     description:
       'Longline waterproof raincoat with taped seams and matte finish.',
-    image: null,
+    image: '/products/Placeholder.jpg',
     tags: ['coat', 'rain', 'spring', 'outdoor', 'performance'],
   },
   {
@@ -275,7 +275,7 @@ export const products = [
     price: 79.99,
     description:
       'Lightweight wind-resistant vest for layering during morning runs.',
-    image: null,
+    image: '/products/Placeholder.jpg',
     tags: ['vest', 'spring', 'performance', 'layering', 'outdoor'],
   },
   {
@@ -302,7 +302,7 @@ export const products = [
     price: 39.99,
     description:
       'Performance compression shorts with 4-way stretch for high-intensity workouts.',
-    image: null,
+    image: '/products/Placeholder.jpg',
     tags: ['shorts', 'training', 'summer', 'performance', 'athleisure'],
   },
   {
@@ -338,7 +338,7 @@ export const products = [
     price: 29.99,
     description:
       'Lightweight stretch tank designed for high-intensity training sessions.',
-    image: null,
+    image: '/products/Placeholder.jpg',
     tags: ['tank', 'training', 'summer', 'performance', 'gym'],
   },
   {

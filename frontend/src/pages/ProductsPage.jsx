@@ -27,7 +27,7 @@ export default function ProductsPage() {
 
   // Constantly updates filteredProducts array upon selectedSeasons or priceRange mutation
   const filteredProducts = useMemo(() => {
-    // Returns every product for which the filter resultsi n trtue
+    // Returns every product for which the filter results in true
     return products.filter((p) => {
       // season filter
       // If seaons selected, check if product tags has any match with seasons

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "eiIwKZAd1ao=",
+  "success": true,
+  "projectFilePath": "C:\\Repos\\Chatbot_Assistant\\backend\\NovaWear.Api\\NovaWear.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\scaia\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\scaia\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

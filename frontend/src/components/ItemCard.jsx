@@ -33,7 +33,7 @@ const ItemCard = ({
           <img
             src={image}
             alt={name}
-            className='h-full w-full object-contain'
+            className='h-full w-full object-contain transition-transform duration-300 group-hover:scale-105'
           />
         ) : (
           <div className='h-full w-full flex items-center justify-center text-gray-400 text-sm'>

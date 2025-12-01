@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react';
-import products from '../data/products';
+import { useEffect, useMemo, useState } from 'react';
 import ItemCard from '../components/ItemCard';
+
+const API_BASE_URL = 'http://localhost:5268';
 
 // Price range filters
 const PRICE_RANGES = [
@@ -15,57 +16,92 @@ const PRICE_RANGES = [
 const SEASONS = ['summer', 'spring', 'winter', 'fall'];
 
 export default function ProductsPage() {
+  // products from backend
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   // filter state
   const [selectedSeasons, setSelectedSeasons] = useState([]);
   const [priceRangeId, setPriceRangeId] = useState('any');
 
-  // Constantly updates priceRange filter upon priceRangeId mutation
+  // fetch products on mount
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/products`);
+        if (!res.ok) {
+          throw new Error(`Failed to load products: ${res.status}`);
+        }
+        const data = await res.json();
+        setProducts(data);
+      } catch (err) {
+        console.error(err);
+        setError('Unable to load products from the server.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  // price range selection
   const priceRange = useMemo(
     () => PRICE_RANGES.find((r) => r.id === priceRangeId) ?? PRICE_RANGES[0],
     [priceRangeId]
   );
 
-  // Constantly updates filteredProducts array upon selectedSeasons or priceRange mutation
+  // filter products from backend
   const filteredProducts = useMemo(() => {
-    // Returns every product for which the filter results in true
     return products.filter((p) => {
       // season filter
-      // If seaons selected, check if product tags has any match with seasons
-      // If seasons unselected, pass all products
       const hasSeasons = selectedSeasons.length > 0;
       const seasonMatch = hasSeasons
         ? (p.tags || []).some((tag) =>
-            selectedSeasons.includes(tag.toLowerCase())
+            selectedSeasons.includes(String(tag).toLowerCase())
           )
         : true;
 
       // price filter
-      // If product price is greater than min and lower than max, pass product
       const price = Number(p.price ?? 0);
       const inRange = price >= priceRange.min && price < priceRange.max;
 
-      // Only return true for products that have both a seasonal and price match
       return seasonMatch && inRange;
     });
-  }, [selectedSeasons, priceRange]);
+  }, [products, selectedSeasons, priceRange]);
 
-  // Resets season and price filters
+  // reset filters
   const clearFilters = () => {
     setSelectedSeasons([]);
     setPriceRangeId('any');
   };
 
-  // Toggles selected seaons
+  // toggle season selection
   const toggleSeason = (season) => {
     setSelectedSeasons((prev) =>
-      // Checks if seasons is already selected
-      // If true, filter it out
-      // If false, append selected season with new selection
       prev.includes(season)
         ? prev.filter((s) => s !== season)
         : [...prev, season]
     );
   };
+
+  // loading / error states
+  if (loading) {
+    return (
+      <div className='w-full py-16 text-center'>
+        <p className='text-lg text-gray-600'>Loading products…</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className='w-full py-16 text-center'>
+        <p className='text-lg text-red-500'>{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className='w-full py-8'>

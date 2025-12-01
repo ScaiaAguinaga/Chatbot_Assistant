@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using NovaWear.Api.Data;
 using NovaWear.Api.Models;
 
 namespace NovaWear.Api.Controllers
@@ -7,41 +8,28 @@ namespace NovaWear.Api.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        // Temporary in-memory list of products
-        private static readonly List<Product> Products = new()
-        {
-            new Product
-            {
-                Id = 1,
-                Name = "NovaWear Tech Hoodie",
-                Price = 89.99m,
-                Description = "Lightweight thermal-lined hoodie with reflective accents and a modern, tapered fit.",
-                Image = "/products/Placeholder.jpg",
-                Tags = ["hoodie", "fall", "streetwear", "athleisure", "layering"]
-            },
-            new Product
-            {
-                Id = 2,
-                Name = "AeroShell Rain Jacket",
-                Price = 129.99m,
-                Description = "Waterproof, breathable shell with taped seams and packable hood for unexpected downpours.",
-                Image = null,
-                Tags = ["jacket", "rain", "spring", "outdoor", "performance" ]
-            }
-            // TODO: Add the rest of your items later
-        };
+        private readonly IProductRepository _repo;
 
+        // Inject repository
+        public ProductsController(IProductRepository repo)
+        {
+            _repo = repo;
+        }
+
+        // Get all products
         [HttpGet]
         public ActionResult<IEnumerable<Product>> GetAll()
         {
-            return Ok(Products);
+            var products = _repo.GetAll();
+            return Ok(products);
         }
 
+        // Get product by ID
         [HttpGet("{id:int}")]
         public ActionResult<Product> GetById(int id)
         {
-            var product = Products.FirstOrDefault(p => p.Id == id);
-            if (product == null) return NotFound();
+            var product = _repo.GetById(id);
+            if (product is null) return NotFound();
             return Ok(product);
         }
     }

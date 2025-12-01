@@ -31,3 +31,4 @@ C:\Repos\Chatbot_Assistant\backend\NovaWear.Api\obj\Debug\net9.0\refint\NovaWear
 C:\Repos\Chatbot_Assistant\backend\NovaWear.Api\obj\Debug\net9.0\NovaWear.Api.pdb
 C:\Repos\Chatbot_Assistant\backend\NovaWear.Api\obj\Debug\net9.0\NovaWear.Api.genruntimeconfig.cache
 C:\Repos\Chatbot_Assistant\backend\NovaWear.Api\obj\Debug\net9.0\ref\NovaWear.Api.dll
+C:\Repos\Chatbot_Assistant\backend\NovaWear.Api\bin\Debug\net9.0\data\products.json

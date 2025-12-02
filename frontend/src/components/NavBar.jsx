@@ -1,36 +1,21 @@
-import { useMemo, useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// src/components/NavBar.jsx
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { FiShoppingCart } from 'react-icons/fi';
 import ShoppingCartDropdown from './ShoppingCartDropdown';
+import { useCart } from '../hooks/useCart'; // adjust path
 
 const NavBar = () => {
+  const { items, itemCount, subtotal, removeFromCart } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
-  const cartRef = useRef('/products/Placeholder.jpg');
+  const cartRef = useRef(null);
+  const location = useLocation();
 
-  // Mock cart items for now
-  const cartItems = useMemo(
-    () => [
-      {
-        id: 1,
-        name: 'NovaWear Tech Hoodie',
-        price: 89.99,
-        qty: 1,
-        image: '/products/Placeholder.jpg',
-      },
-      {
-        id: 2,
-        name: 'AeroShell Rain Jacket',
-        price: 129.99,
-        qty: 1,
-        image: '/products/Placeholder.jpg',
-      },
-    ],
-    []
-  );
-
-  const itemCount = useMemo(
-    () => cartItems.reduce((sum, item) => sum + item.qty, 0),
-    [cartItems]
-  );
+  // Close dropdown on route change
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCartOpen(false);
+  }, [location.pathname]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -62,34 +47,31 @@ const NavBar = () => {
           >
             Products
           </Link>
-
-          {/* Cart + dropdown */}
-          <div className='relative' ref={cartRef}>
-            <button
-              type='button'
-              onClick={() => setCartOpen((o) => !o)}
-              className='relative hover:text-gray-200 transition-colors'
-            >
-              Shopping Cart
-              {itemCount > 0 && (
-                <span className='ml-2 inline-flex items-center justify-center text-xs font-bold bg-white text-blue-600 rounded-full h-5 min-w-5 px-1'>
-                  {itemCount}
-                </span>
-              )}
-            </button>
-
-            {cartOpen && <ShoppingCartDropdown items={cartItems} />}
-          </div>
         </div>
 
-        {/* Login / Signup */}
-        <div>
-          <a
-            href='#'
-            className='bg-white text-blue-600 font-semibold px-4 py-2 rounded-xl hover:bg-gray-100 transition-colors'
+        {/* Cart icon + dropdown */}
+        <div className='relative' ref={cartRef}>
+          <button
+            type='button'
+            onClick={() => setCartOpen((o) => !o)}
+            className='relative hover:text-gray-200 transition-colors flex items-center'
+            aria-label='Open shopping cart'
           >
-            Login / Signup
-          </a>
+            <FiShoppingCart size={22} />
+            {itemCount > 0 && (
+              <span className='ml-1 inline-flex items-center justify-center text-xs font-bold bg-white text-blue-600 rounded-full h-5 min-w-5 px-1'>
+                {itemCount}
+              </span>
+            )}
+          </button>
+
+          {cartOpen && (
+            <ShoppingCartDropdown
+              items={items}
+              subtotal={subtotal}
+              onRemove={removeFromCart}
+            />
+          )}
         </div>
       </div>
     </nav>

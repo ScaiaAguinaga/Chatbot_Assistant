@@ -1,4 +1,3 @@
-// src/components/Catalog.jsx
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCard from '../components/ItemCard';
@@ -6,10 +5,12 @@ import ItemCard from '../components/ItemCard';
 const API_BASE_URL = 'http://localhost:5268'; // backend URL
 
 export default function Catalog() {
+  // Product list, loading state, and error state
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Fetch products from backend on mount
   useEffect(() => {
     const loadProducts = async () => {
       try {
@@ -17,6 +18,7 @@ export default function Catalog() {
         if (!res.ok) {
           throw new Error(`Failed to load products: ${res.status}`);
         }
+
         const data = await res.json();
         setProducts(data);
       } catch (err) {
@@ -30,31 +32,36 @@ export default function Catalog() {
     loadProducts();
   }, []);
 
+  // Loading state UI
   if (loading) {
     return (
-      <div className="w-full text-center py-16">
-        <p className="text-lg text-gray-600">Loading products…</p>
+      <div className='w-full text-center py-16'>
+        <p className='text-lg text-gray-600'>Loading products…</p>
       </div>
     );
   }
 
+  // Error state UI
   if (error) {
     return (
-      <div className="w-full text-center py-16">
-        <p className="text-lg text-red-500">{error}</p>
+      <div className='w-full text-center py-16'>
+        <p className='text-lg text-red-500'>{error}</p>
       </div>
     );
   }
 
+  // Show only first 6 products
   const visibleProducts = products.slice(0, 6);
 
   return (
     <div>
-      <h2 className="text-6xl font-bold text-center pb-16">Collections</h2>
+      <h2 className='text-6xl font-bold text-center pb-16'>Collections</h2>
 
-      <div className="w-[1200px] mx-auto grid grid-cols-3 gap-8">
+      {/* Products Grid */}
+      <div className='w-[1200px] mx-auto grid grid-cols-3 gap-8'>
         {visibleProducts.map((item) => (
           <ItemCard
+            id={item.id} // pass id so cart can distinguish items
             key={item.id}
             image={item.image}
             name={item.name}
@@ -65,11 +72,11 @@ export default function Catalog() {
         ))}
       </div>
 
-      {/* View All Button */}
-      <div className="w-full flex justify-center mt-8">
+      {/* View All Products Button */}
+      <div className='w-full flex justify-center mt-8'>
         <Link
-          to="/products"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+          to='/products'
+          className='bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors'
         >
           View All
         </Link>

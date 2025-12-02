@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContextProvider.jsx';
 
 import HomePage from './pages/HomePage.jsx';
 import ProductsPage from './pages/ProductsPage.jsx';
@@ -11,23 +12,25 @@ import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      {/* Persisten NavBar */}
-      <NavBar />
-      {/* Route views */}
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/products' element={<ProductsPage />} />
+    <CartProvider>
+      <BrowserRouter>
+        {/* Persisten NavBar */}
+        <NavBar />
+        {/* Route views */}
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/products' element={<ProductsPage />} />
 
-        <Route
-          path='*'
-          element={<div className='p-8 text-center'>Page not found</div>}
-        />
-      </Routes>
-      {/* Persisten Footer */}
-      <Footer />
-      {/* AI Chat Widget */}
-      <ChatWidget />
-    </BrowserRouter>
+          <Route
+            path='*'
+            element={<div className='p-8 text-center'>Page not found</div>}
+          />
+        </Routes>
+        {/* Persisten Footer */}
+        <Footer />
+        {/* AI Chat Widget */}
+        <ChatWidget />
+      </BrowserRouter>
+    </CartProvider>
   </StrictMode>
 );

@@ -1,13 +1,23 @@
-import React from 'react';
+import { useCart } from '../hooks/useCart';
 
 const ItemCard = ({
+  id,
   image = '/products/Placeholder.jpg',
   name = 'NovaWear Clothing Item',
   price = '--.--',
   description = 'Item Description Missing.',
 }) => {
+  const { addToCart } = useCart();
+
   const handleAddToCart = () => {
-    console.log(`${name} added to cart`);
+    const numericPrice = Number(price) || 0;
+
+    addToCart({
+      id,
+      name,
+      price: numericPrice,
+      image,
+    });
   };
 
   return (
@@ -33,7 +43,7 @@ const ItemCard = ({
           <img
             src={image}
             alt={name}
-            className='h-full w-full object-contain transition-transform duration-300 group-hover:scale-105'
+            className='h-full w-full object-contain'
           />
         ) : (
           <div className='h-full w-full flex items-center justify-center text-gray-400 text-sm'>

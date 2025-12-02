@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NovaWear.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f275515783b8c4e13d1762dd47fb111a4743ac4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db274292c7e0ff0e6635f92962f76b85f14bf1f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("NovaWear.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NovaWear.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

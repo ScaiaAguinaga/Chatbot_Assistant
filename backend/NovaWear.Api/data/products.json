@@ -44,7 +44,7 @@
     "name": "Vector Denim Jacket",
     "price": 119.99,
     "description": "Classic denim silhouette re-engineered with stretch weave and soft brushed interior.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/VectorDenimJacket.png",
     "tags": ["jacket", "fall", "casual", "streetwear", "layering"]
   },
   {
@@ -60,7 +60,7 @@
     "name": "ThermaKnit Beanie",
     "price": 24.99,
     "description": "Rib-knit beanie with double-layer cuff for added warmth without bulk.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/ThermaKnitBeanie.png",
     "tags": ["accessory", "winter", "knit", "cold-weather", "unisex"]
   },
   {
@@ -124,7 +124,7 @@
     "name": "Summit Windbreaker",
     "price": 99.99,
     "description": "Windproof shell with adjustable hood and reflective trim for outdoor activity.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/SummitWindbreaker.png",
     "tags": ["jacket", "spring", "outdoor", "performance", "lightweight"]
   },
   {
@@ -148,7 +148,7 @@
     "name": "Urban Cargo Pants",
     "price": 89.99,
     "description": "Slim cargo pants with hidden stretch waistband and water-resistant coating.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/UrbanCargoPants.jpg",
     "tags": ["pants", "fall", "urban", "casual", "utility"]
   },
   {
@@ -180,7 +180,7 @@
     "name": "Trailhead Cargo Shorts",
     "price": 69.99,
     "description": "Utility cargo shorts with stretch nylon fabric and quick-dry finish.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/TrailheadCargoShorts.png",
     "tags": ["shorts", "summer", "outdoor", "utility", "performance"]
   },
   {
@@ -204,7 +204,7 @@
     "name": "Sierra Down Parka",
     "price": 279.99,
     "description": "Heavy-duty down parka built for extreme cold with removable faux-fur hood.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/SierraDownParka.png",
     "tags": ["parka", "winter", "insulated", "outdoor", "premium"]
   },
   {
@@ -212,7 +212,7 @@
     "name": "Canvas Utility Jacket",
     "price": 134.99,
     "description": "Durable canvas jacket with reinforced elbows and adjustable waist tabs.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/CanvasUtilityJacket.png",
     "tags": ["jacket", "fall", "utility", "workwear", "layering"]
   },
   {
@@ -220,7 +220,7 @@
     "name": "Element Raincoat",
     "price": 159.99,
     "description": "Longline waterproof raincoat with taped seams and matte finish.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/ElementRaincoat.png",
     "tags": ["coat", "rain", "spring", "outdoor", "performance"]
   },
   {
@@ -228,7 +228,7 @@
     "name": "Vibe Pullover Hoodie",
     "price": 69.99,
     "description": "Midweight cotton-blend hoodie with modern fit and kangaroo pocket.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/VibePulloverHoodie.png",
     "tags": ["hoodie", "fall", "casual", "streetwear", "basics"]
   },
   {
@@ -236,87 +236,7 @@
     "name": "Nomad Travel Pants",
     "price": 99.99,
     "description": "Wrinkle-resistant stretch travel pants with hidden security pockets.",
-    "image": "/products/Placeholder.jpg",
+    "image": "/products/NomadTravelPants.png",
     "tags": ["pants", "travel", "spring", "stretch", "casual"]
-  },
-  {
-    "id": 31,
-    "name": "Chroma Wind Vest",
-    "price": 79.99,
-    "description": "Lightweight wind-resistant vest for layering during morning runs.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["vest", "spring", "performance", "layering", "outdoor"]
-  },
-  {
-    "id": 32,
-    "name": "Summit Tech Polo",
-    "price": 49.99,
-    "description": "Breathable moisture-wicking polo shirt for active summer wear.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["polo", "summer", "training", "casual", "performance"]
-  },
-  {
-    "id": 33,
-    "name": "Evergreen Flannel Shirt",
-    "price": 74.99,
-    "description": "Soft brushed flannel shirt in earth tones for everyday fall comfort.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["shirt", "fall", "casual", "warm", "layering"]
-  },
-  {
-    "id": 34,
-    "name": "Nova Compression Shorts",
-    "price": 39.99,
-    "description": "Performance compression shorts with 4-way stretch for high-intensity workouts.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["shorts", "training", "summer", "performance", "athleisure"]
-  },
-  {
-    "id": 35,
-    "name": "Polar Fleece Joggers",
-    "price": 84.99,
-    "description": "Thermal fleece joggers designed for comfort and warmth in cold weather.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["pants", "winter", "cozy", "athleisure", "warm"]
-  },
-  {
-    "id": 36,
-    "name": "Jetstream Bomber Jacket",
-    "price": 149.99,
-    "description": "Classic bomber jacket with ribbed cuffs and minimalist hardware design.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["jacket", "fall", "streetwear", "outerwear", "casual"]
-  },
-  {
-    "id": 37,
-    "name": "Altitude Down Vest",
-    "price": 119.99,
-    "description": "Goose-down vest that packs small but keeps you warm when temperatures drop.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["vest", "winter", "insulated", "layering", "outdoor"]
-  },
-  {
-    "id": 38,
-    "name": "Tempo Performance Tank",
-    "price": 29.99,
-    "description": "Lightweight stretch tank designed for high-intensity training sessions.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["tank", "training", "summer", "performance", "gym"]
-  },
-  {
-    "id": 39,
-    "name": "AeroStretch Running Jacket",
-    "price": 109.99,
-    "description": "Flexible, breathable running jacket built for movement and airflow.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["jacket", "spring", "running", "outdoor", "performance"]
-  },
-  {
-    "id": 40,
-    "name": "Haven Knit Cardigan",
-    "price": 89.99,
-    "description": "Cozy open-front knit cardigan perfect for layering in transitional weather.",
-    "image": "/products/Placeholder.jpg",
-    "tags": ["cardigan", "fall", "winter", "cozy", "layering"]
   }
 ]

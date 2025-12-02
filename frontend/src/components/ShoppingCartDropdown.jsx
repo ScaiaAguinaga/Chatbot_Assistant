@@ -1,5 +1,3 @@
-// src/components/ShoppingCartDropdown.jsx
-import React from 'react';
 import { FiX } from 'react-icons/fi';
 
 const ShoppingCartDropdown = ({ items, subtotal, onRemove }) => {

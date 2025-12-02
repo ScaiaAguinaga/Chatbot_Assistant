@@ -1,9 +1,8 @@
-// src/components/NavBar.jsx
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FiShoppingCart } from 'react-icons/fi';
 import ShoppingCartDropdown from './ShoppingCartDropdown';
-import { useCart } from '../hooks/useCart'; // adjust path
+import { useCart } from '../hooks/useCart';
 
 const NavBar = () => {
   const { items, itemCount, subtotal, removeFromCart } = useCart();

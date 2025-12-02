@@ -5,6 +5,7 @@ import { CartProvider } from './context/CartContextProvider.jsx';
 
 import HomePage from './pages/HomePage.jsx';
 import ProductsPage from './pages/ProductsPage.jsx';
+import ProductDetailPage from './pages/ProductDetailPage.jsx';
 import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 import ChatWidget from './components/ChatWidget.jsx';
@@ -20,7 +21,7 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/products' element={<ProductsPage />} />
-
+          <Route path='/product/:id' element={<ProductDetailPage />} />
           <Route
             path='*'
             element={<div className='p-8 text-center'>Page not found</div>}
@@ -29,7 +30,7 @@ createRoot(document.getElementById('root')).render(
         {/* Persisten Footer */}
         <Footer />
         {/* AI Chat Widget */}
-        <ChatWidget />
+        {/* <ChatWidget /> */}
       </BrowserRouter>
     </CartProvider>
   </StrictMode>

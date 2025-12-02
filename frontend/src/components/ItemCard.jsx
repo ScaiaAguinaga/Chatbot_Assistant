@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';
 
-// Card component used to display a single product
 const ItemCard = ({
   id,
   image = '/products/Placeholder.jpg',
@@ -8,24 +8,27 @@ const ItemCard = ({
   price = '--.--',
   description = 'Item Description Missing.',
 }) => {
-  // Access cart actions from context
+  const navigate = useNavigate();
   const { addToCart } = useCart();
 
-  // Add the current item to the cart
-  const handleAddToCart = () => {
-    const numericPrice = Number(price) || 0;
+  const handleCardClick = () => {
+    if (!id) return;
+    navigate(`/product/${id}`);
+  };
 
-    addToCart({
-      id,
-      name,
-      price: numericPrice,
-      image,
-    });
+  const handleAddToCart = (e) => {
+    // prevent the card click from firing
+    e.stopPropagation();
+    const numericPrice = Number(price) || 0;
+    addToCart({ id, name, price: numericPrice, image });
   };
 
   return (
-    <div className='group bg-white rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden h-[450px] flex flex-col relative'>
-      {/* Add to Cart button (visible on hover) */}
+    <div
+      onClick={handleCardClick}
+      className='group bg-white rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden h-[450px] flex flex-col relative cursor-pointer'
+    >
+      {/* Add to Cart button (hidden until hover) */}
       <button
         onClick={handleAddToCart}
         className='
@@ -40,13 +43,13 @@ const ItemCard = ({
         Add to Cart
       </button>
 
-      {/* Image container */}
+      {/* Image area */}
       <div className='relative h-64 w-full overflow-hidden bg-gray-100'>
         {image ? (
           <img
             src={image}
             alt={name}
-            className='h-full w-full object-contain'
+            className='h-full w-full object-contain transition-transform duration-300 group-hover:scale-105'
           />
         ) : (
           <div className='h-full w-full flex items-center justify-center text-gray-400 text-sm'>
@@ -55,12 +58,10 @@ const ItemCard = ({
         )}
       </div>
 
-      {/* Text content area */}
+      {/* Content */}
       <div className='p-4 flex-1 flex flex-col'>
         <h3 className='text-lg font-semibold'>{name}</h3>
-        <p className='text-sm text-gray-600 mt-1'>{description}</p>
-
-        {/* Price positioned at the bottom */}
+        <p className='text-sm text-gray-600 mt-1 line-clamp-3'>{description}</p>
         <div className='mt-auto pt-3 text-xl font-semibold'>${price}</div>
       </div>
     </div>
